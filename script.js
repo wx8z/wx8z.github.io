@@ -8,11 +8,11 @@
 
   let i = 0;
   const step = () => {
-    i += Math.random() > 0.7 ? 3 : 2;
+    i += Math.random() > 0.8 ? 2 : 1;
     ascii.textContent = full.slice(0, i);
     if (i < full.length) requestAnimationFrame(step);
   };
-  setTimeout(() => requestAnimationFrame(step), 120);
+  setTimeout(() => requestAnimationFrame(step), 80);
 
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') enterLink.click();
@@ -29,7 +29,7 @@
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '40px' });
+  }, { threshold: 0.15, rootMargin: '20px' });
   els.forEach((el) => io.observe(el));
 })();
 
@@ -46,7 +46,7 @@
       border-radius: 50%;
       pointer-events: none;
       z-index: 9999;
-      transition: transform 0.1s ease-out;
+      transition: transform 0.05s ease-out;
       display: none;
     `;
     document.body.appendChild(cursor);
@@ -67,7 +67,7 @@
   const cards = document.querySelectorAll('.card');
   cards.forEach((card, index) => {
     card.addEventListener('mouseenter', () => {
-      card.style.animationDelay = index * 50 + 'ms';
+      card.style.animationDelay = index * 25 + 'ms';
     });
   });
 })();

@@ -31,15 +31,15 @@ body::before {
     radial-gradient(circle at 20% 20%, rgba(62,142,65,0.05) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(62,142,65,0.03) 0%, transparent 50%),
     radial-gradient(circle at 40% 60%, rgba(62,142,65,0.02) 0%, transparent 50%);
-  animation: backgroundShift 20s ease-in-out infinite;
+  animation: backgroundShift 8s ease-in-out infinite;
   pointer-events: none;
   z-index: -1;
 }
 
 @keyframes backgroundShift {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-10px, 10px) scale(1.02); }
-  66% { transform: translate(10px, -5px) scale(0.98); }
+  33% { transform: translate(-5px, 5px) scale(1.01); }
+  66% { transform: translate(5px, -3px) scale(0.99); }
 }
 
 /* Page load fade */
@@ -62,7 +62,7 @@ nav {
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  transition: transform 300ms ease-out, filter 300ms ease-out;
+  transition: transform 200ms ease-out, filter 200ms ease-out;
 }
 
 .logo a {
@@ -73,8 +73,8 @@ nav {
 }
 
 .logo:hover {
-  transform: scale(1.05) rotate(-1deg);
-  filter: brightness(1.2);
+  transform: scale(1.02) rotate(-0.5deg);
+  filter: brightness(1.1);
 }
 
 .logo::after {
@@ -85,7 +85,7 @@ nav {
   width: 0;
   height: 2px;
   background: var(--accent);
-  transition: width 400ms ease-out;
+  transition: width 300ms ease-out;
 }
 
 .logo:hover::after {
@@ -125,8 +125,8 @@ nav {
 .nav-links a:hover {
   background: var(--accent);
   color: var(--bg-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(62,142,65,0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(62,142,65,0.3);
 }
 
 .nav-links a:hover::before {
@@ -134,13 +134,13 @@ nav {
 }
 
 .nav-links a:active { 
-  transform: translateY(-2px) scale(0.95); 
+  transform: translateY(-1px) scale(0.98); 
 }
 
 .nav-links a[aria-current="page"] {
   background: var(--accent);
   color: var(--bg-dark);
-  animation: currentPagePulse 2s ease-in-out infinite;
+  animation: currentPagePulse 1s ease-in-out infinite;
 }
 
 @keyframes currentPagePulse {
@@ -202,20 +202,20 @@ footer::before {
   padding: 0.8rem;
   border-left: 4px solid var(--accent);
   background: rgba(62,142,65,0.05);
-  transition: all 300ms ease-out;
-  transform: translateX(-10px);
+  transition: all 200ms ease-out;
+  transform: translateX(-5px);
   opacity: 0;
 }
 
-.contact-list li:nth-child(1) { animation: slideInLeft 600ms ease-out 200ms forwards; }
-.contact-list li:nth-child(2) { animation: slideInLeft 600ms ease-out 400ms forwards; }
-.contact-list li:nth-child(3) { animation: slideInLeft 600ms ease-out 600ms forwards; }
-.contact-list li:nth-child(4) { animation: slideInLeft 600ms ease-out 800ms forwards; }
+.contact-list li:nth-child(1) { animation: slideInLeft 400ms ease-out 100ms forwards; }
+.contact-list li:nth-child(2) { animation: slideInLeft 400ms ease-out 200ms forwards; }
+.contact-list li:nth-child(3) { animation: slideInLeft 400ms ease-out 300ms forwards; }
+.contact-list li:nth-child(4) { animation: slideInLeft 400ms ease-out 400ms forwards; }
 
 .contact-list li:hover {
-  transform: translateX(5px);
-  background: rgba(62,142,65,0.1);
-  border-left-width: 8px;
+  transform: translateX(3px);
+  background: rgba(62,142,65,0.08);
+  border-left-width: 6px;
 }
 
 @keyframes slideInLeft {
@@ -253,7 +253,7 @@ a:hover {
   color: var(--bg-dark); background: var(--accent);
   border: var(--border-width) solid var(--accent);
   padding: 0.6rem 1rem; text-decoration: none;
-  transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
   animation: float 3s ease-in-out infinite;
@@ -273,14 +273,14 @@ a:hover {
 }
 
 .btn:hover { 
-  filter: brightness(1.2); 
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 12px rgba(62,142,65,0.4);
+  filter: brightness(1.1); 
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 3px 6px rgba(62,142,65,0.3);
 }
 
 .btn:hover::before {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 }
 
 .btn:active { 
@@ -302,10 +302,10 @@ a:hover {
 .card {
   border: var(--border-width) solid var(--accent);
   padding: 1rem;
-  transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-              filter 300ms ease-out, 
-              box-shadow 300ms ease-out,
-              border-color 300ms ease-out;
+  transition: transform 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              filter 200ms ease-out, 
+              box-shadow 200ms ease-out,
+              border-color 200ms ease-out;
   position: relative;
   overflow: hidden;
 }
@@ -318,13 +318,13 @@ a:hover {
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(62,142,65,0.1), transparent);
-  transition: left 600ms ease-out;
+  transition: left 400ms ease-out;
 }
 
 .card:hover {
-  transform: translate(-5px,-5px) scale(1.02);
-  filter: brightness(1.15);
-  box-shadow: 8px 8px 0 rgba(62,142,65,0.3);
+  transform: translate(-3px,-3px) scale(1.01);
+  filter: brightness(1.08);
+  box-shadow: 5px 5px 0 rgba(62,142,65,0.25);
   border-color: var(--accent);
 }
 
@@ -366,7 +366,7 @@ a:hover {
   width: 200%;
   height: 200%;
   background: linear-gradient(45deg, transparent, rgba(62,142,65,0.1), transparent);
-  animation: scanline 8s linear infinite;
+  animation: scanline 4s linear infinite;
 }
 
 @keyframes scanline {
@@ -382,7 +382,7 @@ a:hover {
   color: var(--text-light); text-decoration: none;
   border-bottom: 3px solid var(--accent); padding-bottom: 2px;
   position: relative;
-  transition: all 300ms ease-out;
+  transition: all 200ms ease-out;
 }
 .cover-nav a::after {
   content: ""; position: absolute; left: 0; bottom: -3px;
@@ -390,8 +390,8 @@ a:hover {
   transition: width 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .cover-nav a:hover {
-  transform: translateY(-2px);
-  text-shadow: 0 2px 4px rgba(62,142,65,0.5);
+  transform: translateY(-1px);
+  text-shadow: 0 1px 2px rgba(62,142,65,0.4);
 }
 .cover-nav a:hover::after { width: 100%; }
 
@@ -418,9 +418,9 @@ a:hover {
 /* Reveal on scroll */
 .reveal { 
   opacity: 0; 
-  transform: translateY(30px) scale(0.95); 
-  transition: opacity 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-              transform 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+  transform: translateY(15px) scale(0.98); 
+  transition: opacity 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94); 
 }
 
 .visible { 
@@ -439,25 +439,25 @@ a:hover {
 .projects-grid .card:nth-child(3) { transition-delay: 300ms; }
 
 /* Hint pulse */
-@keyframes pulse { 0%,100% { opacity: 0.45 } 50% { opacity: 1 } }
-.hint { margin-top: 0.5rem; opacity: 0.7; animation: pulse 1.4s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: 0.6 } 50% { opacity: 1 } }
+.hint { margin-top: 0.5rem; opacity: 0.7; animation: pulse 0.8s ease-in-out infinite; }
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-5px); }
 }
 
 @keyframes breathe {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.03); }
+  50% { transform: scale(1.015); }
 }
 
 .ascii {
-  animation: breathe 4s ease-in-out infinite;
+  animation: breathe 2s ease-in-out infinite;
 }
 
 .btn {
-  animation: float 3s ease-in-out infinite;
+  animation: float 1.5s ease-in-out infinite;
 }
 
 .section-title {
