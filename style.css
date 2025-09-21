@@ -28,19 +28,13 @@ body::before {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 20% 20%, rgba(62,142,65,0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(62,142,65,0.03) 0%, transparent 50%),
-    radial-gradient(circle at 40% 60%, rgba(62,142,65,0.02) 0%, transparent 50%);
-  animation: backgroundShift 8s ease-in-out infinite;
+    radial-gradient(circle at 20% 20%, rgba(62,142,65,0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(62,142,65,0.02) 0%, transparent 50%);
   pointer-events: none;
   z-index: -1;
 }
 
-@keyframes backgroundShift {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-5px, 5px) scale(1.01); }
-  66% { transform: translate(5px, -3px) scale(0.99); }
-}
+
 
 /* Page load fade */
 @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
@@ -111,26 +105,13 @@ nav {
   overflow: hidden;
 }
 
-.nav-links a::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(62,142,65,0.2), transparent);
-  transition: left 400ms ease-out;
-}
+
 
 .nav-links a:hover {
   background: var(--accent);
   color: var(--bg-dark);
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(62,142,65,0.3);
-}
-
-.nav-links a:hover::before {
-  left: 100%;
 }
 
 .nav-links a:active { 
@@ -293,7 +274,24 @@ a:hover {
 
 /* Sections */
 .section-title { font-size: 1.6rem; margin-bottom: 0.5rem; }
-.section p { line-height: 1.6; }
+.section p { line-height: 1.6; margin-bottom: 1rem; }
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.about-list li {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-left: 4px solid var(--accent);
+  background: rgba(62,142,65,0.05);
+}
+.about-list li::before {
+  content: "■ ";
+  color: var(--accent);
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
 
 /* Projects grid */
 .projects-grid {
@@ -308,18 +306,11 @@ a:hover {
               border-color 200ms ease-out;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(62,142,65,0.1), transparent);
-  transition: left 400ms ease-out;
-}
+
 
 .card:hover {
   transform: translate(-3px,-3px) scale(1.01);
@@ -327,11 +318,23 @@ a:hover {
   box-shadow: 5px 5px 0 rgba(62,142,65,0.25);
   border-color: var(--accent);
 }
-
-.card:hover::before {
-  left: 100%;
-}
 .card h3 { margin-bottom: 0.5rem; }
+.card h2 { margin-bottom: 0.5rem; font-size: 1.3rem; }
+.card p { margin-bottom: 1rem; line-height: 1.5; }
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+.tag {
+  background: var(--accent);
+  color: var(--bg-dark);
+  padding: 0.2rem 0.5rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border: 2px solid var(--accent);
+}
 
 /* Header adjustments */
 .site-header { position: sticky; top: 0; background: var(--bg-dark); z-index: 100; }
@@ -358,21 +361,7 @@ a:hover {
   overflow: hidden;
 }
 
-.ascii::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(62,142,65,0.1), transparent);
-  animation: scanline 4s linear infinite;
-}
 
-@keyframes scanline {
-  0% { transform: translate(-100%, -100%) rotate(45deg); }
-  100% { transform: translate(100%, 100%) rotate(45deg); }
-}
 
 .enter-row { margin-top: 1rem; }
 .cover-nav {
@@ -444,20 +433,20 @@ a:hover {
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
+  50% { transform: translateY(-2px); }
 }
 
 @keyframes breathe {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.015); }
+  50% { transform: scale(1.005); }
 }
 
 .ascii {
-  animation: breathe 2s ease-in-out infinite;
+  animation: breathe 4s ease-in-out infinite;
 }
 
 .btn {
-  animation: float 1.5s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
 }
 
 .section-title {

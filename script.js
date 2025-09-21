@@ -8,11 +8,11 @@
 
   let i = 0;
   const step = () => {
-    i += Math.random() > 0.8 ? 2 : 1;
+    i += Math.random() > 0.9 ? 2 : 1; // Less randomness for more predictable animation
     ascii.textContent = full.slice(0, i);
     if (i < full.length) requestAnimationFrame(step);
   };
-  setTimeout(() => requestAnimationFrame(step), 80);
+  setTimeout(() => requestAnimationFrame(step), 100);
 
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') enterLink.click();
